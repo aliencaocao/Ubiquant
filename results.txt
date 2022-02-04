@@ -1,3 +1,7 @@
-DNN x5 v1: 0.147
-DNN x5 v2: 0.141
-DNN x5 v3: 0.151
+DNN x5 v1: 0.147 with embedding and evenly spaced dropouts
+DNN x5 v2: 0.141 with embedding and (accidental) continuous dropouts
+DNN x5 v3: 0.151 with embedding and no dropouts, reduced model size
+DNN x5 v4: 0.117 no embedding poor performance so no model weights saved
+DNN x5 v5: -0.122 pearson loss with callback monitored on val_loss, 40 epoch
+DNN x5 v6: 0.151 but better than V3 mse with 50 epoch, 6-fold split
+DNN x5 v?: pearson loss with callback monitored on val_pearson_corr， 50 epoch, 6-fold split
