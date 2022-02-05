@@ -1,8 +1,16 @@
-DNN x5 v1: 0.147 with embedding and evenly spaced dropouts
-DNN x5 v2: 0.141 with embedding and (accidental) continuous dropouts
-DNN x5 v3: 0.151 with embedding and no dropouts, reduced model size
+DNN x5 v1: 0.147 with embedding and evenly spaced dropouts, 0.0973287412239429 on test
+DNN x5 v2: 0.141 with embedding and (accidental) continuous dropouts 0.13677389718485403 on test
+DNN x5 v3: 0.151 with embedding and no dropouts, reduced model size, 0.15255 on test
 DNN x5 v4: 0.117 no embedding poor performance so no model weights saved
-DNN x5 v5: -0.122 pearson loss with callback monitored on val_loss, 40 epoch
-DNN x5 v6: 0.151 but better than V3 mse with 50 epoch, 6-fold split
-DNN x7 v7: 0.149 50 epoch, 0.02 gussian, 7-fold split
-DNN x5 v?: pearson loss with callback monitored on val_pearson_corr， 50 epoch, 6-fold split
+DNN x5 v5: -0.122 pearson loss with callback monitored on val_loss, 40 epoch -0.09318488819089013 on test
+DNN x6 v6: 0.151 but better than V3 mse with 50 epoch, 6-fold split 0.16307406390342696 on test, 0.22849779460548547 on holdout time id test (but not accurate because the model is trained on them already)
+DNN x7 v7: 0.149 50 epoch, 0.02 gussian, 7-fold split 0.16838214767224044 on test
+DNN x6 v8: 0.143 fixed pearson loss with callback monitored on val_pearson_corr (except reduceLR is monitored on val_loss), 50 epoch, 6-fold split, 0.10661272847612188 on test
+ensemble of dnn x6 v8, x5 v3 and x6 v6 gave 0.144
+DNN x6 v9: fixed pearson loss with all callback monitored on val_pearson_corr, 100 epoch, 6-fold split, reduced model params, 0.2351341413109163 on test (to submit)
+DNN x6 v10: 0.136 pearson loss + sigmoid(mse) * 2, 100 epoch, 6-fold split, reduced model, params 0.2520307069205498 on test
+DNN x6 v11: mse, 100 epoch, 6-fold split, 900K model 0.18482995603167732 on test (to submit)
+DNN x5 v12: 0.109 mse, 100 epoch, 6-fold group time series split but only first 5 trained model (6th have error), 600k model (same as 0.151) 0.1753688485062298 on test csv, 0.12107241807225483 on holdout time id test, if combine with model_5 of DNN x6 v11, 0.146224652668455 on holdout test
+DNN x5 v13: mse, 100 epoch, 6-fold time id k fold using sklearn not group split, same model as 0.151 but initial lr=1e-4, 0.19157831178997678 on csv test, 0.2343073816777293 on holdout test (to submit)
+
+to try: ensemble 2 0.151 on kaggle
