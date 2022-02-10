@@ -16,7 +16,8 @@ DNN x1 v14: 0.113 mse, 100 epoch, single fold trained on all data, smaller model
 DNN x6 v15: 0.141 (submit all 6), 0.136 (without model 3), mse, 100 epoch, 6 fold by investment id, same model as 0.151, lr=7e-4, model 3 is bad 0.20017738381748112 on test csv
 DNN x6 V16: 0.150, reduced model size, lr=8e-4, 6 fold investment id split
 DNN x6 v17: 0.141 same model as 0.151, lr=1e-4, 6 fold investment id split, conditional hybrid loss (mse>0.83 -> mse, else pearson_corr) 0.17631688734188294 on test csv (to submit)
-DNN x6 v18:
+DNN x6 v18: 0.141 same model as 0.151, lr=1e-4, 6 fold investment id split, mse, batchsize=8192, 0.16533647263857085 on test csv
+DNN x6 v19: 0.137 same model as 0.151, lr=1e-4, 6 fold investment id split, pearson mixed loss (non conditional), batchsize=8192, 0.18417589353211655 on test csv
 
 remove outliner -> model do not learn
 
