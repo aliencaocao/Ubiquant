@@ -18,6 +18,11 @@ DNN x6 V16: 0.150, reduced model size, lr=8e-4, 6 fold investment id split
 DNN x6 v17: 0.141 same model as 0.151, lr=1e-4, 6 fold investment id split, conditional hybrid loss (mse>0.83 -> mse, else pearson_corr) 0.17631688734188294 on test csv (to submit)
 DNN x6 v18: 0.141 same model as 0.151, lr=1e-4, 6 fold investment id split, mse, batchsize=8192, 0.16533647263857085 on test csv
 DNN x6 v19: 0.137 same model as 0.151, lr=1e-4, 6 fold investment id split, pearson mixed loss (non conditional), batchsize=8192, 0.18417589353211655 on test csv
+DNN x6 v20: 0.145 no embedding, lr=1e-3, modified model, 6 fold investment id split, mse, batchsize=10240, ~0.21 on test csv
+DNN x6 v21: 0.146, same model as 0.145 but more dropout, rest same, 0.1725336102913356 on test csv
+ensemble of v20 and v21: 0.147
+DNN x6 v22: same model as v21 but replaced swish to mish and optimizer is ranger(RAdam), 0.18155053250323044 on test csv
+
 
 remove outliner -> model do not learn
 
