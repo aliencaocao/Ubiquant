@@ -21,9 +21,13 @@ DNN x6 v19: 0.137 same model as 0.151, lr=1e-4, 6 fold investment id split, pear
 DNN x6 v20: 0.145 no embedding, lr=1e-3, modified model, 6 fold investment id split, mse, batchsize=10240, ~0.21 on test csv
 DNN x6 v21: 0.146, same model as 0.145 but more dropout, rest same, 0.1725336102913356 on test csv
 ensemble of v20 and v21: 0.147
-DNN x6 v22: same model as v21 but replaced swish to mish and optimizer is ranger(RAdam), 0.18155053250323044 on test csv
-
-
+DNN x6 v22: 0.147 same model as v21 but replaced swish to mish and optimizer is ranger(RAdam), 50 epoch 0.18155053250323044 on test csv
+ensemble of v20, 21, 22: 0.148
+DNN x6 v23: 0.141 with embedding, drop out, layer norm, 50 epoch replaced swish to mish and optimizer is ranger(RAdam), 0.18041558535599808 on test csv
+DNN x6 v24: 0.142 100 epoch no embedding same model as v22, 6 fold time id split, 0.20424749101033426 on test csv
+hybrid inference of embedding: v3, 6, 16 no embedding: v20, 21, 22:
+DNN x6 V25: 0.148 (better than ensemble of 20, 21, 22) no embedding, replaced first dense 512 with 2 dense 256, rest same as v22, 0.16504570750966377 on test csv
+DNN x6 v26:
 remove outliner -> model do not learn
 
 ensemble 2 0.151 (v3, v6) on kaggle: 0.152
